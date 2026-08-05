@@ -59,12 +59,14 @@
         
         .en-name {
             font-size: 0.875rem;
-            color: #999;
+            /* #999 は白地で 2.85:1 しかなく基準 (4.5:1) 未満。
+               #767676 は基準を満たす中で最も明るい灰 (4.54:1)。 */
+            color: #767676;
         }
 h2 {
             font-size: 0.85rem; /* 本文より少し小さくして控えめに */
             font-weight: bold;
-            color: #999;
+            color: #767676; /* 旧 #999 は 2.85:1 で基準未満 */
             margin-top: 5rem;
             margin-bottom: 1.5rem;
             text-transform: uppercase;
@@ -80,7 +82,8 @@ h2 {
             text-underline-offset: 0.2em;
         }
         a:hover {
-            color: #888;
+            /* 旧 #888 は 3.54:1。ホバー中も基準を満たすよう #666 (5.74:1) に */
+            color: #666;
         }
 
         /* 定義リスト（会社概要・沿革） */
@@ -113,7 +116,9 @@ h2 {
             dt {
                 float: none;
                 width: 100%;
-                color: #999; /* スマホではラベルを薄くして情報の強弱をつける */
+                /* ラベルを薄くして強弱をつける意図は保ちつつ、基準を満たす明度に。
+                   旧 #999 は 2.85:1 で、スマホでは項目名すべてが該当していた。 */
+                color: #767676;
             }
             dd {
                 margin-left: 0;
@@ -146,7 +151,7 @@ ul.services li::before{
         footer {
             margin-top: 6rem;
             font-size: 0.75rem; /* 本文の75%の大きさ */
-            color: #ccc;
+            color: #767676; /* 旧 #ccc は 1.61:1 でほぼ判読不能だった */
         }
     </style>
 </head>
